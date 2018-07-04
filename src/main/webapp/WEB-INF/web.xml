@@ -51,13 +51,38 @@
     <servlet>
         <servlet-name>AfterLoginServlet</servlet-name>
         <servlet-class>com.myway.servlet.login.AfterLoginServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>AfterLoginServlet</servlet-name>
         <url-pattern>/AfterLoginServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>SaveCookieServlet</servlet-name>
+        <servlet-class>com.myway.servlet.cookie.SaveCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaveCookieServlet</servlet-name>
+        <url-pattern>/SaveCookieServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ReadCookieServlet</servlet-name>
+        <servlet-class>com.myway.servlet.cookie.ReadCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ReadCookieServlet</servlet-name>
+        <url-pattern>/ReadCookieServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DelCookieServlet</servlet-name>
+        <servlet-class>com.myway.servlet.cookie.DelCookieServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DelCookieServlet</servlet-name>
+        <url-pattern>/DelCookieServlet</url-pattern>
+    </servlet-mapping>
 
     <listener>
         <listener-class>com.myway.listener.Webcontextlistener</listener-class>

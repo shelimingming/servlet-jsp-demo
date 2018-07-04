@@ -7,18 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class SaveCookieServlet extends HttpServlet {
+public class DelCookieServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Cookie cookie1 = new Cookie("test1","cookie1");
+        Cookie[] cookies = req.getCookies();
+
+        Cookie cookie1 = new Cookie("test1", "cookie1");
+        cookie1.setMaxAge(0);
         resp.addCookie(cookie1);
-
-        Cookie cookie2 = new Cookie("test2","cookie2");
-        cookie2.setPath("/");
-        resp.addCookie(cookie2);
-
-        Cookie cookie3 = new Cookie("test3","cookie3");
-        cookie3.setPath("/temp/");
-        resp.addCookie(cookie3);
+        resp.sendRedirect("index.html");
     }
 }
